@@ -1,0 +1,137 @@
+{
+  "title": "Elige el mundo visual",
+  "question": "Revisa las tres propuestas visuales. ¿Qué conviene conservar, qué se siente ajeno y apruebas, combinas, ajustas o rechazas la dirección?",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Hoja de evaluación deportiva",
+      "kicker": "THE ROLL",
+      "lineage": "Hojas de evaluación y prescripción en nutrición deportiva",
+      "thesis": "Una evaluación corporal clara se convierte en un plan flexible y seguimiento humano.",
+      "palette": ["#FFFFFF", "#F9FAFB", "#047857", "#064E3B", "#15251F"],
+      "materials": ["papel de medición", "trazo de tinta esmeralda", "escala antropométrica sin cifras ficticias"],
+      "viewport": "La hoja ocupa la pantalla como una pieza continua: titular exacto, oferta legible, CTA oscuro de WhatsApp y una guía lineal Evaluación → Plan → Seguimiento; debajo ya asoma la primera sección.",
+      "risk": "Puede sentirse clínica si la evaluación desplaza la flexibilidad y el trato personal.",
+      "raised": [
+        {"from": "challenger-ansi-bbs", "raise": "La navegación y las acciones se mantienen legibles y operables solo con teclado."},
+        {"from": "challenger-nixie", "raise": "Evaluación, plan y seguimiento tienen estados visibles, sin inventar cifras."},
+        {"from": "challenger-mezzotint", "raise": "Los espacios de antes/después quedan claramente reservados para evidencia real autorizada."},
+        {"from": "challenger-kinetic-sand", "raise": "Cada interacción anuncia un cambio de estado legible, también para movimiento reducido."},
+        {"from": "challenger-jacquard", "raise": "Las alternativas de alimentos se presentan como intercambios concretos y combinables."},
+        {"from": "challenger-weather", "raise": "Una escena humana a escala real da calidez y deja aire alrededor de la oferta."}
+      ],
+      "comp": ".impeccable/mocks/decision/assigned.png"
+    },
+    {
+      "id": "model-pick",
+      "label": "Bitácora de entrenamiento",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "Bitácoras de entrenamiento que atletas y entrenadores usan para preparar sesiones",
+      "thesis": "El plan deja de sentirse como dieta y se vuelve una guía práctica que acompaña el entrenamiento.",
+      "palette": ["#FFFFFF", "#F9FAFB", "#059669", "#065F46", "#17211C"],
+      "materials": ["página de bitácora", "anotaciones de entrenador", "pestañas funcionales verde intenso"],
+      "viewport": "Una bitácora abierta integra el titular, el CTA, la ruta de consulta y una muestra sin datos inventados de cómo se enlazan entrenamiento, menús flexibles y seguimiento.",
+      "risk": "La metáfora conocida puede parecer una app de registro si no se mantiene la voz humana.",
+      "comp": ".impeccable/mocks/decision/model-pick.png"
+    }
+  ],
+  "challengers": [
+    {
+      "id": "challenger-ansi-bbs",
+      "label": "Tablero BBS de entrenamiento",
+      "verdict": "declined",
+      "lineage": "Tableros de anuncios por texto de comunidades en línea",
+      "thesis": "Un servicio de nutrición expresado como mensajes y accesos de una comunidad digital.",
+      "palette": ["#000000", "#00FFFF", "#FF00FF", "#FFFFFF"],
+      "materials": ["caracteres de bloque", "retícula terminal"],
+      "viewport": "Un índice numerado reemplaza la navegación y la información del servicio.",
+      "case": "La forma de comunidad no representa una consulta individual ni explica con claridad la evaluación corporal.",
+      "kept": "La información y el foco de teclado deben seguir siendo directos y claros.",
+      "risk": "El aspecto retro eclipsa el trabajo profesional y la lectura móvil.",
+      "hero": "https://impeccable.style/worlds/cards/medium-native-ansi-bbs-nightboard-hero.webp"
+    },
+    {
+      "id": "challenger-nixie",
+      "label": "Contador de laboratorio Nixie",
+      "verdict": "declined",
+      "lineage": "Contadores de laboratorio con tubos Nixie",
+      "thesis": "La transformación se expresa como una secuencia de valores medidos.",
+      "palette": ["#111111", "#FF8A24", "#B8B8B8"],
+      "materials": ["tubos de vidrio", "dígitos iluminados"],
+      "viewport": "Dígitos luminosos dominan la composición y convierten las etapas de consulta en un contador.",
+      "case": "La medición es relevante, pero el contador privilegia cifras y oscurece alimentación flexible y acompañamiento.",
+      "kept": "Las etapas de evaluación, plan y seguimiento se distinguen como estados concretos, sin mostrar resultados ficticios.",
+      "risk": "Los dígitos podrían sugerir resultados clínicos o promesas que no se han entregado.",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-nixie-laboratory-counter-hero.webp"
+    },
+    {
+      "id": "challenger-mezzotint",
+      "label": "Estampa de luz y sombra",
+      "verdict": "declined",
+      "lineage": "Estampas mezzotinta de alto contraste",
+      "thesis": "La recomposición aparece como una imagen que emerge poco a poco.",
+      "palette": ["#050505", "#FFFFFF", "#766E64"],
+      "materials": ["tinta negra", "luz raspada sobre papel"],
+      "viewport": "Una imagen oscura ocupa el primer plano y el texto emerge en la misma superficie.",
+      "case": "La metáfora de transformación no explica el servicio y contradice la paleta clara solicitada.",
+      "kept": "Los casos de éxito tendrán espacios visuales propios y separados para fotos reales autorizadas.",
+      "risk": "El contraste dramático puede hacer que la promesa física parezca exagerada.",
+      "hero": "https://impeccable.style/worlds/cards/ink-pigment-printmaking-mezzotint-velvet-night-hero.webp"
+    },
+    {
+      "id": "challenger-kinetic-sand",
+      "label": "Relieve de arena cinética",
+      "verdict": "declined",
+      "lineage": "Superficies de arena moldeadas por gesto",
+      "thesis": "El plan se organiza como una superficie táctil que cambia con cada elección.",
+      "palette": ["#3A2114", "#B87936", "#E4B765"],
+      "materials": ["arena en relieve", "glifos circulares"],
+      "viewport": "Un dial táctil presenta el plan como un comando que el visitante debe girar para continuar.",
+      "case": "El control gestual añade una barrera y no aclara cómo se personalizan las consultas.",
+      "kept": "Las respuestas del FAQ y las acciones muestran estados abiertos y cerrados de forma explícita.",
+      "risk": "La metáfora puede parecer un juego y exigir demasiado al teléfono.",
+      "hero": "https://impeccable.style/worlds/cards/kinetic-sand-glyphs-hero.webp"
+    },
+    {
+      "id": "challenger-jacquard",
+      "label": "Tejido de elecciones",
+      "verdict": "declined",
+      "lineage": "Tejidos jacquard producidos con instrucciones perforadas",
+      "thesis": "Muchas decisiones pequeñas se combinan para construir un plan a medida.",
+      "palette": ["#10162E", "#D9B869", "#F2EBD8"],
+      "materials": ["hilos entrelazados", "secuencia de instrucciones"],
+      "viewport": "Una trama de decisiones ocupa el hero y traduce alimentos intercambiables en una matriz.",
+      "case": "El sistema sugiere modularidad, pero la trama hace menos clara la consulta y se aleja del público deportivo.",
+      "kept": "Las listas de equivalencias conservan su carácter combinable con alternativas escritas con claridad.",
+      "risk": "El patrón puede competir con el contenido y perder legibilidad en móvil.",
+      "hero": "https://impeccable.style/worlds/cards/textiles-weave-drape-fashion-jacquard-punched-brocade-hero.webp"
+    },
+    {
+      "id": "challenger-weather",
+      "label": "Sala de luz y siluetas",
+      "verdict": "declined",
+      "lineage": "Instalaciones de luz monocromática y reflejo arquitectónico",
+      "thesis": "El espacio de consulta se convierte en una experiencia de luz compartida.",
+      "palette": ["#D99728", "#191510", "#F0B343"],
+      "materials": ["neblina", "luz ámbar", "reflejos"],
+      "viewport": "Una gran silueta reflejada lleva el contenido a una sala inmersiva de luz.",
+      "case": "El ambiente no muestra el servicio ni facilita la decisión rápida de consulta.",
+      "kept": "La imagen del hero conserva escala humana y deja espacio libre para leer y actuar.",
+      "risk": "La neblina y el reflejo reducen contraste, claridad y rendimiento.",
+      "hero": "https://impeccable.style/worlds/cards/light-shadow-caustics-indoor-weather-sun-hero.webp"
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "buildPath": {"value": "comp", "toggle": true},
+  "canon": true,
+  "canonCard": {
+    "label": "Landing de consultorio deportivo",
+    "thesis": "Una página clara de consulta que presenta el servicio, las modalidades y el contacto sin una metáfora visual dominante.",
+    "palette": ["#FFFFFF", "#F9FAFB", "#047857", "#065F46", "#111827"],
+    "materials": ["tipografía sans serif", "fotografía editorial", "superficies limpias"],
+    "viewport": "Titular, texto exacto, CTA visible y foto ilustrativa; después aparecen modalidades, beneficios, casos, FAQ y contacto en el orden solicitado.",
+    "risk": "Es fácil reconocer la categoría, pero menos fácil distinguirla de otros sitios de nutrición.",
+    "comp": ".impeccable/mocks/decision/canon.png"
+  },
+  "steer": true
+}

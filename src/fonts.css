@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'Encode Sans Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('@fontsource-variable/encode-sans/files/encode-sans-latin-wght-normal.woff2') format('woff2');
+}

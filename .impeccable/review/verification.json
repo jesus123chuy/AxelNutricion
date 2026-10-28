@@ -1,0 +1,111 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "desktop: viewport width",
+      "pass": true,
+      "details": "{\"width\":1440,\"scrollWidth\":1430,\"clientWidth\":1430,\"imageLoaded\":true,\"menuDisplay\":\"none\",\"reduced\":false,\"hiddenReveals\":23,\"heroAnimation\":\"0.72s\"}"
+    },
+    {
+      "name": "desktop: no horizontal overflow",
+      "pass": true,
+      "details": "scrollWidth=1430"
+    },
+    {
+      "name": "desktop: all images loaded",
+      "pass": true,
+      "details": "{\"width\":1440,\"scrollWidth\":1430,\"clientWidth\":1430,\"imageLoaded\":true,\"menuDisplay\":\"none\",\"reduced\":false,\"hiddenReveals\":23,\"heroAnimation\":\"0.72s\"}"
+    },
+    {
+      "name": "comp: viewport width",
+      "pass": true,
+      "details": "{\"width\":853,\"scrollWidth\":843,\"clientWidth\":843,\"imageLoaded\":true,\"menuDisplay\":\"grid\",\"reduced\":false,\"hiddenReveals\":23,\"heroAnimation\":\"0.72s\"}"
+    },
+    {
+      "name": "comp: no horizontal overflow",
+      "pass": true,
+      "details": "scrollWidth=843"
+    },
+    {
+      "name": "comp: all images loaded",
+      "pass": true,
+      "details": "{\"width\":853,\"scrollWidth\":843,\"clientWidth\":843,\"imageLoaded\":true,\"menuDisplay\":\"grid\",\"reduced\":false,\"hiddenReveals\":23,\"heroAnimation\":\"0.72s\"}"
+    },
+    {
+      "name": "mobile: viewport width",
+      "pass": true,
+      "details": "{\"width\":390,\"scrollWidth\":390,\"clientWidth\":390,\"imageLoaded\":true,\"menuDisplay\":\"grid\",\"reduced\":false,\"hiddenReveals\":25,\"heroAnimation\":\"0.72s\"}"
+    },
+    {
+      "name": "mobile: no horizontal overflow",
+      "pass": true,
+      "details": "scrollWidth=390"
+    },
+    {
+      "name": "mobile: all images loaded",
+      "pass": true,
+      "details": "{\"width\":390,\"scrollWidth\":390,\"clientWidth\":390,\"imageLoaded\":true,\"menuDisplay\":\"grid\",\"reduced\":false,\"hiddenReveals\":25,\"heroAnimation\":\"0.72s\"}"
+    },
+    {
+      "name": "mobile menu shown",
+      "pass": true,
+      "details": "grid"
+    },
+    {
+      "name": "reveals wait below the fold",
+      "pass": true,
+      "details": "{\"width\":390,\"scrollWidth\":390,\"clientWidth\":390,\"imageLoaded\":true,\"menuDisplay\":\"grid\",\"reduced\":false,\"hiddenReveals\":25,\"heroAnimation\":\"0.72s\"}"
+    },
+    {
+      "name": "mobile menu opens",
+      "pass": true,
+      "details": "{\"expanded\":\"true\",\"open\":true}"
+    },
+    {
+      "name": "Escape closes menu and restores focus",
+      "pass": true,
+      "details": "{\"expanded\":\"false\",\"focused\":true}"
+    },
+    {
+      "name": "FAQ opens accessibly",
+      "pass": true,
+      "details": "{\"expanded\":\"true\",\"hidden\":\"false\",\"inert\":false,\"height\":\"148px\"}"
+    },
+    {
+      "name": "FAQ closes accessibly",
+      "pass": true,
+      "details": "{\"expanded\":\"false\",\"hidden\":\"true\",\"inert\":true}"
+    },
+    {
+      "name": "contact form prepares fallback without a number",
+      "pass": true,
+      "details": "{\"status\":\"El número de WhatsApp aún no está configurado. Tu mensaje está listo para enviar cuando se agregue.\\n\\nHola, quiero solicitar información sobre una consulta de nutrición deportiva.\\nNombre: Ana\\nCorreo: ana@example.com\\nModalidad de interés: Online\\nObjetivo: Mejorar mi rendimiento\",\"fallback\":\"#contacto\"}"
+    },
+    {
+      "name": "first keyboard focus reaches visible skip link",
+      "pass": true,
+      "details": "{\"focusVisible\":true,\"outlineWidth\":\"3px\",\"activeTag\":\"A\",\"activeClass\":\"skip-link\",\"skip\":true}"
+    },
+    {
+      "name": "reduced-motion: viewport width",
+      "pass": true,
+      "details": "{\"width\":390,\"scrollWidth\":390,\"clientWidth\":390,\"imageLoaded\":true,\"menuDisplay\":\"grid\",\"reduced\":true,\"hiddenReveals\":0,\"heroAnimation\":\"1e-05s\"}"
+    },
+    {
+      "name": "reduced-motion: no horizontal overflow",
+      "pass": true,
+      "details": "scrollWidth=390"
+    },
+    {
+      "name": "reduced-motion: all images loaded",
+      "pass": true,
+      "details": "{\"width\":390,\"scrollWidth\":390,\"clientWidth\":390,\"imageLoaded\":true,\"menuDisplay\":\"grid\",\"reduced\":true,\"hiddenReveals\":0,\"heroAnimation\":\"1e-05s\"}"
+    },
+    {
+      "name": "reduced motion removes reveal delay",
+      "pass": true,
+      "details": "{\"width\":390,\"scrollWidth\":390,\"clientWidth\":390,\"imageLoaded\":true,\"menuDisplay\":\"grid\",\"reduced\":true,\"hiddenReveals\":0,\"heroAnimation\":\"1e-05s\"}"
+    }
+  ],
+  "browser": "Chrome/155.0.8059.80"
+}

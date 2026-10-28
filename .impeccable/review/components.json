@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 3,
+  "stage": "components",
+  "id": "components",
+  "title": "Plan and asset review · index.html",
+  "comp": {
+    "path": ".impeccable/mocks/image-first.png",
+    "width": 853,
+    "height": 1844
+  },
+  "specSha256": "3fd4dfe85ef0c428da33d4db4f1e2ad4b72cbe4753977f502bda040249262212",
+  "components": [
+    {
+      "id": "photo-caption",
+      "name": "Photo caption",
+      "kind": "text",
+      "role": "plan",
+      "box": {
+        "x": 0.027,
+        "y": 0.3682,
+        "w": 0.1923,
+        "h": 0.0157
+      },
+      "note": "Small white text caption reading Imagen ilustrativa, set as accessible HTML text above the image.",
+      "medium": "code",
+      "preview": {
+        "kind": "comp-crop"
+      },
+      "codeDrawn": true,
+      "dependencies": []
+    },
+    {
+      "id": "consultation-photo",
+      "name": "Consultation photo",
+      "kind": "image",
+      "role": "asset",
+      "box": {
+        "x": 0,
+        "y": 0.0553,
+        "w": 1,
+        "h": 0.3389
+      },
+      "note": "Editorial daylight consultation photo: adult athlete and coach study a blank plan at a gym table.",
+      "medium": "raster",
+      "preview": {
+        "kind": "image",
+        "path": "assets/plates/consultation-photo.png"
+      },
+      "dependencies": []
+    },
+    {
+      "id": "next-section-photo",
+      "name": "Next section photo",
+      "kind": "image",
+      "role": "asset",
+      "box": {
+        "x": 0,
+        "y": 0.9675,
+        "w": 1,
+        "h": 0.0325
+      },
+      "note": "Top edge of the next section’s editorial gym image, partially visible at the bottom of the first mobile viewport.",
+      "medium": "raster",
+      "preview": {
+        "kind": "image",
+        "path": "assets/plates/next-section-photo.png"
+      },
+      "dependencies": []
+    }
+  ],
+  "codeRegions": [
+    {
+      "id": "header",
+      "name": "Header",
+      "kind": "chrome",
+      "box": {
+        "x": 0,
+        "y": 0,
+        "w": 1,
+        "h": 0.0553
+      },
+      "note": "White compact site header with the wordmark on the left and menu control on the right."
+    },
+    {
+      "id": "wordmark",
+      "name": "Wordmark",
+      "kind": "text",
+      "box": {
+        "x": 0.0363,
+        "y": 0.0174,
+        "w": 0.4279,
+        "h": 0.0217
+      },
+      "note": "Dark green and charcoal wordmark ‘Nutriólogo deportivo’."
+    },
+    {
+      "id": "menu-button",
+      "name": "Menu button",
+      "kind": "control",
+      "box": {
+        "x": 0.898,
+        "y": 0.0092,
+        "w": 0.0785,
+        "h": 0.0369
+      },
+      "note": "Three horizontal dark strokes for the mobile navigation button."
+    },
+    {
+      "id": "hero-title",
+      "name": "Hero title",
+      "kind": "text",
+      "box": {
+        "x": 0.0457,
+        "y": 0.4197,
+        "w": 0.9121,
+        "h": 0.1057
+      },
+      "note": "Three-line bold dark headline with final location phrase in green: Maximiza tu masa muscular y reduce grasa sin pasar hambre en Colima."
+    },
+    {
+      "id": "hero-description",
+      "name": "Hero description",
+      "kind": "text",
+      "box": {
+        "x": 0.0469,
+        "y": 0.5423,
+        "w": 0.9062,
+        "h": 0.1177
+      },
+      "note": "Five-line dark gray exact description of the personalized plans and consultation locations."
+    },
+    {
+      "id": "primary-cta",
+      "name": "Primary cta",
+      "kind": "control",
+      "box": {
+        "x": 0.0457,
+        "y": 0.6773,
+        "w": 0.9097,
+        "h": 0.0521
+      },
+      "note": "Wide deep green rounded WhatsApp booking button with white label and arrow."
+    },
+    {
+      "id": "secondary-cta",
+      "name": "Secondary cta",
+      "kind": "control",
+      "box": {
+        "x": 0.2673,
+        "y": 0.7446,
+        "w": 0.4666,
+        "h": 0.032
+      },
+      "note": "Centered underlined green link to consultation modalities with arrow."
+    },
+    {
+      "id": "pain-section",
+      "name": "Pain section",
+      "kind": "chrome",
+      "box": {
+        "x": 0,
+        "y": 0.7972,
+        "w": 1,
+        "h": 0.2028
+      },
+      "note": "Light gray next section background beginning after the hero."
+    },
+    {
+      "id": "pain-title",
+      "name": "Pain title",
+      "kind": "text",
+      "box": {
+        "x": 0.0457,
+        "y": 0.8357,
+        "w": 0.9121,
+        "h": 0.0607
+      },
+      "note": "Bold two-line dark heading: La nutrición debe adaptarse a tu vida."
+    },
+    {
+      "id": "pain-item-1",
+      "name": "Pain item 1",
+      "kind": "text",
+      "box": {
+        "x": 0.0481,
+        "y": 0.9246,
+        "w": 0.9074,
+        "h": 0.0423
+      },
+      "note": "First pain point with a small emerald bullet: ¿Frustrado de entrenar duro en el gimnasio sin ver cambios reales en el espejo?"
+    }
+  ]
+}

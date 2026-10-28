@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-17T00:53:08Z",
+  "title": "Design System: Nutrición deportiva Colima",
+  "extensions": {
+    "colorMeta": {
+      "green-emerald-training": {
+        "role": "primary",
+        "displayName": "Verde esmeralda de entrenamiento",
+        "canonical": "#09674f"
+      },
+      "green-emerald-deep": {
+        "role": "primary",
+        "displayName": "Verde esmeralda profundo",
+        "canonical": "#07553f"
+      },
+      "green-card": {
+        "role": "secondary",
+        "displayName": "Verde de modalidad",
+        "canonical": "#0c5b46"
+      },
+      "green-plan": {
+        "role": "secondary",
+        "displayName": "Verde de plan",
+        "canonical": "#123f34"
+      },
+      "green-footer": {
+        "role": "secondary",
+        "displayName": "Verde de cierre",
+        "canonical": "#122c25"
+      },
+      "green-soft-surface": {
+        "role": "secondary",
+        "displayName": "Verde suave",
+        "canonical": "#eaf3ee"
+      },
+      "white-clean": {
+        "role": "neutral",
+        "displayName": "Blanco limpio",
+        "canonical": "#ffffff"
+      },
+      "gray-mist": {
+        "role": "neutral",
+        "displayName": "Gris niebla",
+        "canonical": "#f4f7f5"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Tinta",
+        "canonical": "#16201f"
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Tinta suave",
+        "canonical": "#33413e"
+      },
+      "divider": {
+        "role": "neutral",
+        "displayName": "Línea",
+        "canonical": "#d8e1dc"
+      },
+      "focus-amber": {
+        "role": "tertiary",
+        "displayName": "Ámbar de foco",
+        "canonical": "#bb6d27"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Titular de consulta",
+        "purpose": "Titular principal y mensajes de entrada."
+      },
+      "headline": {
+        "displayName": "Título de sección",
+        "purpose": "Jerarquía de los bloques principales."
+      },
+      "body": {
+        "displayName": "Texto de lectura",
+        "purpose": "Descripción, beneficios, respuestas y contexto."
+      },
+      "control": {
+        "displayName": "Control de acción",
+        "purpose": "CTA principal y controles de envío."
+      }
+    },
+    "shadows": [
+      {
+        "name": "cta-ambient",
+        "value": "0 7px 20px rgba(8,91,68,.13)",
+        "purpose": "Separación suave bajo la acción primaria."
+      },
+      {
+        "name": "contact-float",
+        "value": "0 5px 18px rgba(5,61,43,.24)",
+        "purpose": "Mantener visible el acceso de contacto flotante."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Reveals de contenido e interacciones de CTA."
+      },
+      {
+        "name": "reveal-opacity",
+        "value": "650ms",
+        "purpose": "Revelar contenido cuando entra en el viewport."
+      },
+      {
+        "name": "reveal-translate",
+        "value": "1rem",
+        "purpose": "Distancia inicial de desplazamiento vertical en reveal."
+      }
+    ],
+    "breakpoints": [
+      { "name": "tablet", "value": "640px" },
+      { "name": "desktop", "value": "1024px" },
+      { "name": "wide", "value": "1100px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary CTA",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Acción principal de contacto con tratamiento verde y sombra ambiente.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#contacto\">Agendar consulta <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 17 17 7M8 7h9v9\"/></svg></a>",
+      "css": ".ds-btn-primary { display:inline-flex; align-items:center; justify-content:center; gap:.65rem; min-height:3.45rem; padding:.8rem 1.25rem; border:1px solid var(--green); border-radius:.7rem; color:#fff; background:var(--green); box-shadow:0 7px 20px rgba(8,91,68,.13); font:680 .98rem/1.2 'Encode Sans Variable','Encode Sans',sans-serif; text-decoration:none; transition:background-color .25s ease,transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s ease; } .ds-btn-primary svg { width:1rem; height:1rem; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; } .ds-btn-primary:hover { color:#fff; background:var(--green-deep); transform:translateY(-2px) scale(1.015); box-shadow:0 12px 26px rgba(8,91,68,.2); } .ds-btn-primary:focus-visible { outline:3px solid #bb6d27; outline-offset:3px; } .ds-btn-primary:active { transform:translateY(0) scale(.99); }"
+    },
+    {
+      "name": "Text CTA",
+      "kind": "custom",
+      "refersTo": "button-link",
+      "description": "Acción secundaria de navegación con flecha SVG.",
+      "html": "<a class=\"ds-text-cta\" href=\"#modalidades\">Ver modalidades <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></a>",
+      "css": ".ds-text-cta { display:inline-flex; align-items:center; gap:.4rem; min-height:2.7rem; color:var(--green); font:640 1rem/1.3 'Encode Sans Variable','Encode Sans',sans-serif; text-decoration-thickness:1px; text-underline-offset:.24em; transition:color .2s ease,gap .2s ease,transform .3s cubic-bezier(.16,1,.3,1); } .ds-text-cta svg { width:1rem; height:1rem; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; } .ds-text-cta:hover { gap:.7rem; color:var(--green-deep); transform:translateY(-1px) scale(1.02); } .ds-text-cta:focus-visible { outline:3px solid #bb6d27; outline-offset:3px; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "field-default",
+      "description": "Campo de formulario con borde calmado y foco contrastante.",
+      "html": "<label class=\"ds-field-label\" for=\"ds-name\">Nombre</label><input class=\"ds-field\" id=\"ds-name\" type=\"text\" placeholder=\"Tu nombre\"/>",
+      "css": ".ds-field-label { display:block; margin:.25rem 0 .35rem; color:#36433e; font:630 .83rem/1.4 'Encode Sans Variable','Encode Sans',sans-serif; } .ds-field { width:100%; min-height:2.8rem; padding:.65rem .75rem; border:1px solid #cbd5cf; border-radius:.45rem; color:var(--ink); background:#fff; font:400 .92rem/1.45 'Encode Sans Variable','Encode Sans',sans-serif; } .ds-field::placeholder { color:#66736d; } .ds-field:focus-visible { border-color:var(--green); outline:3px solid #bb6d27; outline-offset:3px; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "description": "Marca, enlaces directos y CTA de contacto.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Navegación\"><a href=\"#modalidades\">Modalidades</a><a href=\"#preguntas\">Preguntas</a><a class=\"ds-nav-cta\" href=\"#contacto\">Agendar consulta</a></nav>",
+      "css": ".ds-nav { display:flex; align-items:center; gap:.5rem; font:400 .88rem/1.3 'Encode Sans Variable','Encode Sans',sans-serif; } .ds-nav a { display:inline-flex; align-items:center; min-height:2.6rem; padding-inline:.65rem; border-radius:.45rem; color:var(--ink-soft); text-decoration:none; transition:color .2s ease,background .2s ease,transform .3s cubic-bezier(.16,1,.3,1); } .ds-nav a:hover { color:var(--green); } .ds-nav .ds-nav-cta { margin-left:.35rem; padding-inline:.95rem; border:1px solid var(--green); color:var(--green); font-weight:680; } .ds-nav .ds-nav-cta:hover { color:#fff; background:var(--green); transform:translateY(-1px) scale(1.02); } .ds-nav a:focus-visible { outline:3px solid #bb6d27; outline-offset:3px; }"
+    },
+    {
+      "name": "Modality Card",
+      "kind": "card",
+      "description": "Explica la consulta presencial con una acción al pie.",
+      "html": "<article class=\"ds-modality\"><p class=\"ds-modality-label\">Atención presencial</p><h3>Consulta en Colima</h3><p>Evaluación de composición corporal, hábitos y rendimiento en consultorio.</p><a href=\"#contacto\">Agendar consulta <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 17 17 7M8 7h9v9\"/></svg></a></article>",
+      "css": ".ds-modality { display:flex; flex-direction:column; align-items:flex-start; min-height:22rem; padding:2rem; border-radius:1rem; color:#fff; background:var(--green-card); font-family:'Encode Sans Variable','Encode Sans',sans-serif; } .ds-modality-label { margin:0 0 2.5rem; font-size:.84rem; font-weight:630; } .ds-modality h3 { margin:0; font-size:clamp(1.45rem,3vw,2rem); line-height:1.15; letter-spacing:-.035em; } .ds-modality p:not(.ds-modality-label) { margin:1rem 0 1.3rem; font-size:.98rem; line-height:1.65; } .ds-modality a { display:inline-flex; align-items:center; gap:.5rem; margin-top:auto; color:inherit; font-weight:680; text-underline-offset:.2em; transition:gap .2s ease,transform .2s ease; } .ds-modality a:hover { gap:.8rem; transform:translateX(2px) scale(1.01); } .ds-modality a:focus-visible { outline:3px solid #bb6d27; outline-offset:3px; } .ds-modality svg { width:1rem; height:1rem; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }"
+    },
+    {
+      "name": "FAQ Accordion Item",
+      "kind": "custom",
+      "description": "Pregunta operable por teclado con estado ARIA y respuesta animada.",
+      "html": "<div class=\"ds-faq\"><button class=\"ds-faq-trigger\" type=\"button\" aria-expanded=\"false\" aria-controls=\"ds-answer\"><span>¿Cómo funciona la consulta online?</span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 5v14M5 12h14\"/></svg></button><div class=\"ds-faq-panel\" id=\"ds-answer\" aria-hidden=\"true\" inert><p>La consulta se adapta a tu entrenamiento y estilo de vida.</p></div></div>",
+      "css": ".ds-faq { border-bottom:1px solid #cfd9d3; font-family:'Encode Sans Variable','Encode Sans',sans-serif; } .ds-faq-trigger { display:flex; align-items:center; justify-content:space-between; gap:1rem; width:100%; min-height:4rem; padding:1rem 0; border:0; color:var(--ink); background:transparent; text-align:left; font:640 1rem/1.4 'Encode Sans Variable','Encode Sans',sans-serif; cursor:pointer; } .ds-faq-trigger:focus-visible { outline:3px solid #bb6d27; outline-offset:3px; } .ds-faq-trigger svg { width:1.2rem; height:1.2rem; flex:0 0 auto; fill:none; stroke:var(--green); stroke-width:1.8; transition:transform .25s cubic-bezier(.16,1,.3,1); } .ds-faq-trigger[aria-expanded=true] svg { transform:rotate(45deg); } .ds-faq-panel { max-height:0; overflow:hidden; opacity:0; transition:max-height .35s cubic-bezier(.16,1,.3,1),opacity .25s ease; } .ds-faq-trigger[aria-expanded=true] + .ds-faq-panel { max-height:20rem; opacity:1; } .ds-faq-panel p { max-width:68ch; margin:0; padding:0 0 1.1rem; color:#53605b; font-size:.95rem; line-height:1.7; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "El consultorio que acompaña",
+    "overview": "La interfaz se siente como una consulta de nutrición deportiva donde la persona puede hablar de entrenamiento y vida diaria sin recibir promesas grandilocuentes. La dirección usa lenguaje visual claro, sereno y humano: fotografía editorial como punto de entrada, información concreta y llamadas a la acción fáciles de reconocer.\n\nLas superficies claras mantienen legible el contenido; el verde esmeralda identifica acciones y transiciones entre información y contacto. Los casos de éxito conservan espacios para imágenes autorizadas y no se presentan como evidencia visual hasta recibir material real. El plan se expresa con una superficie verde más profunda para diferenciarlo sin cambiar el tono del sitio.",
+    "keyCharacteristics": [
+      "Fotografía de consulta primero; oferta y acción enseguida.",
+      "Verde de entrenamiento sobre blanco limpio y gris niebla.",
+      "Sans variable de peso firme, con titulares compactos y cuerpo legible.",
+      "Datos de contacto y prueba social tratados con transparencia."
+    ],
+    "rules": [
+      {
+        "name": "La Regla del Verde de Acción",
+        "body": "El esmeralda marca acciones y orientación; las superficies amplias usan verdes más profundos para que el CTA principal conserve prioridad.",
+        "section": "colors"
+      },
+      {
+        "name": "La Regla del Titular Claro",
+        "body": "Usa peso y tamaño para dar fuerza; evita comprimir la letra más allá de -0.04em.",
+        "section": "typography"
+      }
+    ],
+    "dos": [
+      "Do use el verde esmeralda para acciones, orientación y enlaces de contacto.",
+      "Do deja que la foto del hero abra la historia y presenta la oferta inmediatamente después.",
+      "Do conserva anchos de lectura y el cambio a columnas según los breakpoints observados.",
+      "Do usa SVG para iconos, texto real para etiquetas y un foco visible con contraste.",
+      "Do respeta prefers-reduced-motion y mantiene controles operables con teclado."
+    ],
+    "donts": [
+      "Don't comprimas titulares o marca más allá de -0.04em.",
+      "Don't inventes fotos de pacientes, resultados, métricas, precios, credenciales ni datos de contacto.",
+      "Don't conviertas los marcadores de caso en testimonios visuales sin autorización.",
+      "Don't uses emojis o glifos de texto para sustituir los iconos SVG.",
+      "Don't añadas kickers sobre los títulos, gradientes de texto ni sombras duras de bloque."
+    ]
+  }
+}
