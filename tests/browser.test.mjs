@@ -30,6 +30,7 @@ test('Landing: production browser verification', { timeout: 180_000 }, async (su
     page.on('pageerror', (error) => errors.push(error.message));
     page.on('response', (response) => { if (response.status() >= 400) failures.push(`${response.status()} ${response.url()}`); });
     await page.goto(url);
+    if (options.javaScriptEnabled !== false) await page.waitForFunction(() => !document.getElementById('page-skeleton'));
     await page.evaluate(() => document.fonts.ready);
     return { page, context };
   };
@@ -329,7 +330,7 @@ test('Landing: production browser verification', { timeout: 180_000 }, async (su
             // Audit the settled page: the hero fades in, and mid-fade text is semi-transparent.
             await page.evaluate(() => Promise.all(document.getAnimations()
               .filter((animation) => animation.effect?.getTiming().iterations !== Infinity)
-              .map((animation) => animation.finished)));
+              .map((animation) => animation.finished.catch(() => {}))));
             await page.addScriptTag({ content: axeSource });
             const violations = await page.evaluate(async () => {
               const result = await window.axe.run(document, { runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'best-practice'] } });
@@ -392,6 +393,7 @@ test('Landing: production browser verification', { timeout: 180_000 }, async (su
         assert.equal(await page.locator('.menu-toggle').isVisible(), false);
         assert.equal(await page.locator('#site-nav a[href="#casos"]').isVisible(), true);
         assert.equal(await page.locator('#contact-form').isVisible(), false);
+        assert.equal(await page.locator('#page-skeleton').isVisible(), false);
         const hrefs = await page.locator('[data-whatsapp]').evaluateAll((links) => links.map((link) => link.getAttribute('href')));
         assert.ok(hrefs.length >= 5);
         for (const href of hrefs) assert.match(href, /^https:\/\/wa\.me\/523122281628\?text=/);

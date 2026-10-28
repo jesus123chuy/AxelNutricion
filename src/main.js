@@ -193,9 +193,23 @@ function setupFooter() {
   });
 }
 
+// Las fotos muestran un brillo de carga hasta que llegan; si fallan, se queda un fondo estático.
+function setupImagePlaceholders() {
+  document.querySelectorAll('main img').forEach((image) => {
+    if (image.complete && image.naturalWidth) {
+      image.classList.add('is-loaded');
+      return;
+    }
+    image.addEventListener('load', () => image.classList.add('is-loaded'), { once: true });
+    image.addEventListener('error', () => image.classList.add('is-failed'), { once: true });
+  });
+}
+
 applyContactDetails();
 setupWhatsApp();
 setupNavigation();
 setupFaq();
 setupCasesPassage();
+setupImagePlaceholders();
 setupFooter();
+window.__skeleton?.ready('app');

@@ -326,6 +326,15 @@ html { caret-color: var(--green); scrollbar-color: #9bb4a7 #edf2ee; scrollbar-wi
   .case-photo figcaption { inset: .85rem auto auto .85rem; }
 }
 
+/* Placeholder de carga para fotos (complementa el skeleton de index.html). */
+.hero-photo img, .case-photo img, .gym-gallery img, .contact-photo img {
+  background: linear-gradient(100deg, #e7eeea 30%, #f5f8f6 50%, #e7eeea 70%) 0 0 / 300% 100%;
+  animation: img-shimmer 1.5s linear infinite;
+}
+.hero-photo img.is-loaded, .case-photo img.is-loaded, .gym-gallery img.is-loaded, .contact-photo img.is-loaded { background: none; animation: none; }
+.hero-photo img.is-failed, .case-photo img.is-failed, .gym-gallery img.is-failed, .contact-photo img.is-failed { background: #e7eeea; animation: none; }
+@keyframes img-shimmer { to { background-position: -150% 0; } }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }

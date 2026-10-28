@@ -3,6 +3,135 @@
   <head>
     <meta charset="UTF-8" />
     <script>document.documentElement.classList.add('js');</script>
+    <!-- Skeleton de carga: estilos inline para que se pinte antes de que llegue el CSS principal. -->
+    <style>
+      .page-skeleton { display: none; }
+      .js.is-loading body { overflow: hidden; }
+      .js.is-loading .hero-copy { animation-play-state: paused; }
+      .page-skeleton, .page-skeleton * { box-sizing: border-box; }
+      .js .page-skeleton { --sk-base: #e7eeea; --sk-shine: #f5f8f6; position: fixed; inset: 0; z-index: 9999; display: block; overflow: hidden; background: #fff; font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; transition: opacity .3s ease, visibility .3s; }
+      .page-skeleton.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+      .sk-frame { animation: sk-in .25s .15s both; }
+      .sk { display: block; border-radius: .45rem; background: linear-gradient(100deg, var(--sk-base) 30%, var(--sk-shine) 50%, var(--sk-base) 70%) 0 0 / 300% 100%; animation: sk-shimmer 1.5s linear infinite; }
+      .sk-wrap { width: min(100% - 2.25rem, 76rem); margin-inline: auto; }
+      .sk-header { border-bottom: 1px solid #e7ebe8; }
+      .sk-header-inner { min-height: 7.75rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .65rem; }
+      .sk-logo { width: 9rem; height: 3.25rem; }
+      .sk-burger { display: grid; gap: 5px; padding: .6rem; }
+      .sk-burger i { width: 1.5rem; height: 2px; background: #b9cfc4; }
+      .sk-nav { display: none; }
+      .sk-hero { display: grid; padding-bottom: 2.75rem; }
+      .sk-photo { aspect-ratio: 1.36; margin-inline: calc((100vw - min(100vw - 2.25rem, 76rem)) / -2); border-radius: 0; }
+      .sk-copy { --lh: calc(clamp(2.25rem, 1.4rem + 3.2vw, 3.5rem) * 1.08); padding-top: 2rem; }
+      .sk-title { width: var(--w); max-width: 100%; height: calc(var(--lh) * .78); margin: calc(var(--lh) * .11) 0; }
+      .sk-line { width: var(--w, 100%); height: 1rem; margin-top: .65rem; border-radius: .3rem; }
+      .sk-copy .sk-title + .sk-line { margin-top: 1.4rem; }
+      .sk-next { display: grid; gap: .8rem; padding-top: 4.25rem; }
+      .sk-h2 { width: min(70%, 26rem); height: 2.4rem; }
+      .sk-status { position: fixed; left: 50%; bottom: max(1.25rem, env(safe-area-inset-bottom)); width: min(100% - 2.25rem, 26rem); display: flex; align-items: center; gap: .75rem; padding: .8rem 1rem; color: #33413e; background: #fff; border: 1px solid #d8e1dc; border-radius: .9rem; box-shadow: 0 10px 30px rgba(18, 44, 37, .12); font-size: .9rem; line-height: 1.45; transform: translate(-50%, 1rem); opacity: 0; visibility: hidden; transition: opacity .3s ease, transform .3s ease, visibility .3s; }
+      .sk-status.is-visible { transform: translate(-50%, 0); opacity: 1; visibility: visible; }
+      .sk-status::before { content: ''; flex: 0 0 auto; width: .6rem; height: .6rem; border-radius: 50%; background: #bb6d27; animation: sk-pulse 1.2s ease-in-out infinite; }
+      .sk-status[data-state="offline"]::before { background: #b42318; animation: none; }
+      .sk-message { flex: 1; margin: 0; }
+      .sk-retry { flex: 0 0 auto; min-height: 2.5rem; padding: .45rem .9rem; color: #fff; background: #09674f; border: 0; border-radius: .6rem; font: inherit; font-weight: 650; cursor: pointer; }
+      .sk-retry:hover { background: #07553f; }
+      .sk-retry:focus-visible { outline: 3px solid #bb6d27; outline-offset: 3px; }
+      @media (min-width: 640px) {
+        .sk-wrap { width: min(100% - 3.5rem, 76rem); }
+        .sk-photo { aspect-ratio: 1.9; margin-inline: calc((100vw - min(100vw - 3.5rem, 76rem)) / -2); }
+        .sk-hero { padding-bottom: 3.5rem; }
+        .sk-copy { padding-top: 3.2rem; }
+        .sk-title { margin-inline: auto; }
+        .sk-header-inner { min-height: 8.875rem; }
+        .sk-logo { width: 11rem; height: 3.9rem; }
+        .sk-mobile, .sk-desktop { display: none; }
+      }
+      @media (min-width: 1024px) {
+        .sk-burger { display: none; }
+        .sk-nav { display: flex; align-items: center; gap: 1.6rem; }
+        .sk-nav .sk { width: 4.5rem; height: .85rem; }
+        .sk-nav .sk-cta { width: 9.5rem; height: 2.75rem; border-radius: .7rem; --sk-base: #d5e6dc; --sk-shine: #e9f3ed; }
+        .sk-hero { grid-template-columns: minmax(0, 1.1fr) minmax(22rem, .9fr); align-items: center; gap: clamp(2rem, 4vw, 4.5rem); min-height: 34rem; padding-block: 2rem 2.75rem; }
+        .sk-photo { height: min(40vw, 32rem); aspect-ratio: auto; margin: 0; border-radius: .9rem; }
+        .sk-copy { padding-top: 0; }
+        .sk-title { margin-inline: 0; }
+        .sk-desktop { display: block; }
+      }
+      @media (min-width: 1100px) {
+        .sk-hero { grid-template-columns: minmax(0, 1.15fr) minmax(27rem, .85fr); }
+        .sk-photo { height: 34rem; }
+      }
+      @keyframes sk-shimmer { to { background-position: -150% 0; } }
+      @keyframes sk-in { from { opacity: 0; } }
+      @keyframes sk-pulse { 50% { opacity: .35; } }
+      @media (prefers-reduced-motion: reduce) {
+        .sk, .sk-frame, .sk-status::before { animation: none; }
+        .page-skeleton, .sk-status { transition: none; }
+      }
+    </style>
+    <script>
+      (function () {
+        var root = document.documentElement;
+        root.classList.add('is-loading');
+        var state = { css: false, app: false, hero: false, done: false, failed: false };
+        var heroGrace;
+
+        function el(id) { return document.getElementById(id); }
+        function showStatus(kind) {
+          if (state.done) return;
+          var box = el('sk-status');
+          if (!box) return;
+          var offline = kind === 'offline' || navigator.onLine === false;
+          box.dataset.state = offline ? 'offline' : kind;
+          el('sk-message').textContent = offline
+            ? 'Parece que no tienes conexión. La página se recargará sola al volver el internet.'
+            : kind === 'error'
+              ? 'No pudimos cargar la página completa. Revisa tu conexión e inténtalo de nuevo.'
+              : 'Tu conexión va lenta. Seguimos cargando…';
+          el('sk-retry').hidden = !(offline || kind === 'error');
+          box.classList.add('is-visible');
+        }
+        function reveal() {
+          if (state.done) return;
+          state.done = true;
+          clearTimeout(heroGrace);
+          root.classList.remove('is-loading');
+          var skeleton = el('page-skeleton');
+          if (!skeleton) return;
+          skeleton.classList.add('is-hidden');
+          setTimeout(function () { skeleton.remove(); }, 350);
+        }
+        function check() {
+          if (state.done || !state.css || !state.app) return;
+          if (state.hero) return reveal();
+          // Si la foto principal tarda, no detenemos la página: se ve con su placeholder.
+          if (!heroGrace) heroGrace = setTimeout(reveal, 3500);
+        }
+
+        window.__skeleton = {
+          ready: function (part) { state[part] = true; check(); },
+          fail: function () { state.failed = true; showStatus('error'); },
+        };
+
+        document.addEventListener('DOMContentLoaded', function () {
+          // En desarrollo (vite dev) el CSS lo inyecta main.js; en producción llega por <link data-app-css>.
+          if (!document.querySelector('link[data-app-css]')) state.css = true;
+          var hero = document.querySelector('.hero-photo img');
+          var heroDone = function () { window.__skeleton.ready('hero'); };
+          if (!hero || hero.complete) heroDone();
+          else { hero.addEventListener('load', heroDone); hero.addEventListener('error', heroDone); }
+          el('sk-retry').addEventListener('click', function () { location.reload(); });
+          if (navigator.onLine === false) showStatus('offline');
+          check();
+        });
+        window.addEventListener('load', function () {
+          if (state.css && !state.failed) reveal(); else showStatus('error');
+        });
+        window.addEventListener('offline', function () { showStatus('offline'); });
+        window.addEventListener('online', function () { if (!state.done) location.reload(); });
+        setTimeout(function () { showStatus('slow'); }, 6000);
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0b5d47" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -76,6 +205,38 @@
       <symbol id="icon-scale" viewBox="0 0 48 48"><rect x="7" y="7" width="34" height="35" rx="7"/><path d="M13 22v13m22-13v13M18 17a6 6 0 0 1 12 0v2H18Z"/><path d="m24 17 2-4M18 36h12"/></symbol>
       <symbol id="icon-measure" viewBox="0 0 48 48"><path d="M8 14c0-5 32-5 32 0s-32 5-32 0Zm0 0v17c0 5 32 5 32 0V14M8 24c0 5 32 5 32 0M8 31v8h32v-8"/><path d="M14 19v5m6-4v3m6-3v5m6-6v4m-18 12v4m6-3v3m6-3v3m6-4v4"/></symbol>
     </svg>
+    <div class="page-skeleton" id="page-skeleton">
+      <div class="sk-frame" aria-hidden="true">
+        <div class="sk-header">
+          <div class="sk-wrap sk-header-inner">
+            <span class="sk sk-logo"></span>
+            <span class="sk-burger"><i></i><i></i><i></i></span>
+            <span class="sk-nav"><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk"></i><i class="sk sk-cta"></i></span>
+          </div>
+        </div>
+        <div class="sk-wrap sk-hero">
+          <span class="sk sk-photo"></span>
+          <div class="sk-copy">
+            <span class="sk sk-title" style="--w: 96%"></span>
+            <span class="sk sk-title" style="--w: 88%"></span>
+            <span class="sk sk-title" style="--w: 80%"></span>
+            <span class="sk sk-title sk-desktop" style="--w: 66%"></span>
+            <span class="sk sk-line"></span>
+            <span class="sk sk-line" style="--w: 94%"></span>
+            <span class="sk sk-line" style="--w: 97%"></span>
+            <span class="sk sk-line sk-mobile" style="--w: 58%"></span>
+          </div>
+        </div>
+        <div class="sk-wrap sk-next">
+          <span class="sk sk-h2"></span>
+          <span class="sk sk-line" style="--w: min(100%, 34rem)"></span>
+        </div>
+      </div>
+      <div class="sk-status" id="sk-status" role="status" aria-live="polite">
+        <p class="sk-message" id="sk-message"></p>
+        <button class="sk-retry" id="sk-retry" type="button" hidden>Reintentar</button>
+      </div>
+    </div>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
     <header class="site-header">
